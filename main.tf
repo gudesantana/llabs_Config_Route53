@@ -19,6 +19,11 @@ module "route53" {
       name  = "llabsdb.good.tec.br"
       type  = "CNAME"
       value = ["llabsdbmsqlv1.cj0iow28m1f5.us-east-1.rds.amazonaws.com"]
+    },
+    {
+      name  = "clima.good.tec.br"
+      type  = "CNAME"
+      value = ["appfront.good.tec.br"]
     }
   ]
   ttl = "30"
