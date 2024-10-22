@@ -3,22 +3,22 @@ module "route53" {
   source  = "dasmeta/modules/aws//modules/route53"
   version = "0.21.17"
 
-  zone = "llabs.com.br"
+  zone = "good.tec.br"
   records = [
     {
-      name  = "appfront.llabs.com.br"
-      type  = "A"
-      value = ["10.60.0.10"] # Registro Removido
+      name  = "appfront.good.tec.br"
+      type  = "CNAME"
+      value = ["alb-ecs-llabs-appfront-prd-1220206133.us-east-1.elb.amazonaws.com"]
     },
     {
-      name  = "appback.llabs.com.br"
-      type  = "A"
-      value = ["10.60.0.20"] # Registro Removido
+      name  = "appback.good.tec.br"
+      type  = "CNAME"
+      value = ["alb-ecs-llabs-appback-prd-419421043.us-east-1.elb.amazonaws.com"]
     },
     {
-      name  = "rdsdb.llabs.com.br"
-      type  = "A"
-      value = ["10.60.0.30"] # Registro Removido
+      name  = "llabsdb.good.tec.br"
+      type  = "CNAME"
+      value = ["llabsdbmsqlv1.cj0iow28m1f5.us-east-1.rds.amazonaws.com"]
     }
   ]
   ttl = "30"
